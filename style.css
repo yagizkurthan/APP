@@ -6,9 +6,9 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #333; /* Default text color */
 }
 
 h1, h2, h3 {
@@ -33,53 +33,519 @@ p {
 }
 
 a {
-  color: #007bff;
+  color: #007bff; /* Default link color - can be overridden */
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none; /* Often, underlines are removed on hover for modern designs if not primary navigation */
 }
 
-/* Header */
+/* Header Detailed Styling */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e7e7e7;
+  padding: 0.75em 2.5em; /* Adjusted padding */
+  background-color: #ffffff; /* Assuming white background */
+  border-bottom: 1px solid #dee2e6; /* Subtle border */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure header stays on top */
+}
+
+/* Logo Styling */
+header div:first-child { /* Targeting the div containing "Logo" */
+  font-size: 1.75em; /* Approximate size */
+  font-weight: 700; /* Bold */
+  color: #1c1c1c; /* Darker color for logo text */
+}
+
+header nav {
+  display: flex;
+  align-items: center;
 }
 
 header nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
+  margin: 0; /* Resetting default ul margin */
 }
 
 header nav ul li {
-  margin-left: 1.5em;
+  margin-left: 1.2em; /* Spacing between nav items */
 }
 
 header nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #495057; /* Medium grey for nav links */
+  font-weight: 500; /* Slightly bolder than normal text */
+  font-size: 0.95em; /* Standard nav link size */
+  padding: 0.5em 0.25em; /* Padding for hover interaction */
+  transition: color 0.2s ease-in-out;
 }
 
-/* Hero Section */
+header nav ul li a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Specific styling for action buttons in nav */
+/* "Talk to Us" - styled as a less prominent button */
+header nav ul li a[href="#"]:nth-last-child(3) { /* Assuming "Talk to Us" is third from last */
+  padding: 0.5em 1em;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+header nav ul li a[href="#"]:nth-last-child(3):hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* "Log in" - styled as a simple link, but distinct */
+header nav ul li a[href="#"]:nth-last-child(2) { /* Assuming "Log in" is second from last */
+  color: #007bff; /* Blue color */
+  font-weight: 600;
+}
+
+header nav ul li a[href="#"]:nth-last-child(2):hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* "Get started" - styled as a prominent button */
+header nav ul li a[href="#"]:nth-last-child(1) { /* Assuming "Get started" is the last link */
+  background-color: #007bff; /* Primary blue */
+  color: #ffffff;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+
+header nav ul li a[href="#"]:nth-last-child(1):hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Hero Section Detailed Styling */
 .hero-section {
   text-align: center;
-  padding: 4em 2em;
-  background-color: #e9ecef;
+  padding: 5em 2em; /* Increased padding */
+  background-color: #f8f9fa; /* Light grey, similar to off-white */
 }
 
 .hero-section h1 {
-  margin-bottom: 0.5em;
+  font-size: 3em; /* Larger font size for main headline */
+  font-weight: 700; /* Bold */
+  color: #212529; /* Dark grey/black */
+  line-height: 1.2;
+  margin-bottom: 0.6em; /* Adjusted margin */
 }
 
 .hero-section p {
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
+  font-size: 1.15em; /* Slightly smaller than previous */
+  color: #495057; /* Medium grey */
+  line-height: 1.7;
+  margin-bottom: 2em; /* Increased margin for spacing */
+  max-width: 600px; /* Constrain width for better readability */
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/* Styling for the div containing buttons in hero section */
+.hero-section div a { /* Targeting <a> tags that are direct children of a div in hero-section */
+  font-size: 1em;
+  font-weight: 600; /* Semi-bold */
+  padding: 0.9em 2em; /* Generous padding */
+  border-radius: 6px; /* Slightly more rounded corners */
+  text-decoration: none;
+  display: inline-block; /* Ensure they behave like block elements for padding */
+  margin: 0.5em;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* "Get started" button in Hero */
+.hero-section div a:first-child {
+  background-color: #007bff; /* Primary blue */
+  color: #ffffff;
+  border: 1px solid #007bff;
+}
+
+.hero-section div a:first-child:hover {
+  background-color: #0056b3; /* Darker blue */
+  border-color: #0056b3;
+}
+
+/* "Book a demo" button in Hero */
+.hero-section div a:last-child {
+  background-color: #ffffff; /* White background */
+  color: #007bff; /* Blue text */
+  border: 1px solid #007bff; /* Blue border */
+}
+
+.hero-section div a:last-child:hover {
+  background-color: #f8f9fa; /* Light grey on hover */
+  color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Ecosystem Section Styling */
+.ecosystem-section {
+  padding: 4em 2em; /* Generous padding */
+  background-color: #ffffff; /* Assuming it stays white or default */
+  text-align: center; /* Center align text content */
+}
+
+.ecosystem-section h2 {
+  font-size: 2.2em; /* Slightly smaller than hero h1 */
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.75em;
+}
+
+.ecosystem-section p {
+  font-size: 1.1em;
+  color: #495057;
+  line-height: 1.7;
+  max-width: 700px; /* Constrain width for readability */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em; /* Space before the image placeholder */
+}
+
+/* Image Placeholder for Ecosystem Section */
+.ecosystem-section div { /* This targets the div directly inside .ecosystem-section */
+  width: 70%; /* Example width, adjust as needed */
+  max-width: 800px; /* Max width for larger screens */
+  min-height: 300px; /* Minimum height */
+  background-color: #e9ecef; /* Light grey background for placeholder */
+  border: 2px dashed #ced4da; /* Dashed border */
+  margin: 0 auto; /* Center the placeholder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  color: #6c757d;
+}
+
+/* Features Section (.features-section) Styling */
+.features-section {
+  padding: 3em 2em;
+  background-color: #f8f9fa; /* Light background for the whole section */
+}
+
+.features-section { /* Re-declaring to add flex properties specifically to the container of the divs */
+  display: flex;
+  flex-wrap: wrap; /* Allow stacking on smaller screens */
+  justify-content: space-around; /* Distribute items nicely */
+  gap: 2em; /* Spacing between feature blocks */
+}
+
+.features-section > div { /* Targeting the direct children divs (feature blocks) */
+  flex-basis: calc(33.333% - 2em); /* Aim for 3 columns, accounting for gap. Adjust as needed. */
+  min-width: 280px; /* Minimum width before stacking */
+  background-color: #ffffff; /* White background for each feature block */
+  padding: 2em;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  text-align: left; /* Default text alignment, can be overridden if needed */
+  margin-bottom: 1em; /* In case of stacking, ensure margin */
+}
+
+.features-section h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #343a40; /* Darker grey for titles */
+  margin-bottom: 0.75em;
+}
+
+.features-section a {
+  color: #007bff; /* Standard link blue */
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block; /* Allows for margin-top if needed */
+  margin-top: 1em;
+}
+
+.features-section a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* SDK Section (.sdk-section) Styling */
+.sdk-section {
+  padding: 4em 2em; /* Generous padding for the section */
+  background-color: #ffffff; /* Default white background */
+}
+
+.sdk-section { /* Re-declaring to add flex properties for the two columns */
+  display: flex;
+  flex-wrap: wrap; /* Allow stacking on smaller screens */
+  justify-content: space-between; /* Space them out */
+  gap: 2em; /* Spacing between the two subsections */
+}
+
+.sdk-section > div { /* Targeting the two direct children divs (No-code and Code SDK subsections) */
+  flex-basis: calc(50% - 1em); /* Aim for 2 columns, accounting for gap */
+  min-width: 300px; /* Minimum width before stacking */
+  /* background-color: #f8f9fa; */ /* Optional: slight background for subsections */
+  /* border: 1px solid #e9ecef; */ /* Optional: slight border */
+  padding: 1.5em; /* Padding within each subsection */
+  border-radius: 8px; /* Rounded corners for subsections */
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.03); */ /* Optional: very subtle shadow */
+  display: flex; /* Use flex for internal layout of title, p, and placeholder */
+  flex-direction: column; /* Stack items vertically within subsection */
+  text-align: left; /* Default left align for text */
+  margin-bottom: 1em; /* In case of stacking */
+}
+
+.sdk-section h3 {
+  font-size: 1.8em; /* Prominent titles for subsections */
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 0.5em;
+}
+
+.sdk-section p {
+  font-size: 1em;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 1.5em; /* Space before the image placeholder */
+  flex-grow: 1; /* Allow paragraph to take available space if needed */
+}
+
+/* Image Placeholders within SDK subsections */
+.sdk-section div div[class*="placeholder"] { /* Targeting divs with "placeholder" in their class */
+  width: 100%; /* Full width of the parent subsection div */
+  min-height: 200px; /* Example height */
+  background-color: #e9ecef;
+  border: 2px dashed #ced4da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: #6c757d;
+  border-radius: 4px; /* Slight rounding for placeholder itself */
+  margin-top: auto; /* Push placeholder to the bottom if text is short */
+}
+
+/* Integrations Section (.integrations-section) Styling */
+.integrations-section {
+  padding: 4em 2em;
+  background-color: #f8f9fa; /* Light grey background for the section */
+  text-align: center; /* Center align headline and sub-headline */
+}
+
+.integrations-section h2 {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.75em;
+}
+
+.integrations-section p {
+  font-size: 1.1em;
+  color: #495057;
+  line-height: 1.7;
+  max-width: 750px; /* Constrain width */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em; /* Space before the logo container */
+}
+
+/* Logo Container Styling */
+.integrations-section div { /* This targets the div holding the logo placeholders */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em; /* Gap between logo "items" if they were individual elements */
+  padding: 1.5em; /* Padding for the container itself */
+  /* background-color: #ffffff; */ /* Optional: if the logo area needs a different bg */
+  /* border-radius: 8px; */
+}
+
+/* Styling for the text nodes (logo placeholders) - this is limited
+   as they are not individually wrapped. We'll style the container,
+   and the browser will flow the text. We can add some styles here
+   that might affect the text if needed, but ideally, they'd be wrapped.
+   For now, just making the container's text a bit more styled.
+*/
+.integrations-section div {
+  font-size: 0.9em;
+  color: #6c757d; /* Lighter color for placeholder text */
+  line-height: 2; /* Increase line height to give some space if text wraps */
+}
+
+/* LLM Section (.llm-section) Styling */
+.llm-section {
+  padding: 4em 2em;
+  background-color: #ffffff; /* White background to alternate with previous section */
+  text-align: center; /* Center align headline and sub-headline */
+}
+
+.llm-section h2 {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.75em;
+}
+
+.llm-section p {
+  font-size: 1.1em;
+  color: #495057;
+  line-height: 1.7;
+  max-width: 750px; /* Constrain width */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em; /* Space before the logo container */
+}
+
+/* Logo Container Styling for LLM Section */
+.llm-section div { /* This targets the div holding the logo placeholders */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em; /* Gap between logo "items" */
+  padding: 1.5em;
+  /* font-size: 0.9em; */ /* Moved specific text styling to a more precise selector if needed, or keep it general */
+  /* color: #6c757d; */
+  /* line-height: 2; */
+}
+
+/* Styling for the text nodes (logo placeholders) in LLM section.
+   Same limitations as integrations section apply.
+*/
+.llm-section div { /* Keep this general for now to affect the text in the container */
+  font-size: 0.9em;
+  color: #6c757d;
+  line-height: 2;
+}
+
+/* Leverage AI Section (.leverage-ai-section) Styling */
+.leverage-ai-section {
+  padding: 4em 2em;
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+.leverage-ai-section > h2 { /* Targeting the main headline specifically */
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #212529;
+  text-align: center;
+  margin-bottom: 2em; /* More space before the cards */
+}
+
+.leverage-ai-section { /* Re-declaring to make it a flex container for the cards */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Or space-between if preferred */
+  gap: 2em; /* Spacing between cards */
+}
+
+.leverage-ai-section > div { /* Targeting the direct children divs (the three cards) */
+  flex-basis: calc(33.333% - 2em); /* Aim for 3 columns, accounting for gap */
+  min-width: 300px; /* Minimum width before stacking */
+  background-color: #ffffff; /* White background for cards */
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow for cards */
+  display: flex;
+  flex-direction: column; /* Stack content within card vertically */
+  text-align: left; /* Text generally left-aligned in cards */
+  margin-bottom: 1em; /* Spacing when stacked */
+}
+
+.leverage-ai-section > div h3 { /* Titles within the cards */
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 0.75em;
+}
+
+.leverage-ai-section > div p { /* Paragraphs within the cards */
+  font-size: 1em;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  flex-grow: 1; /* Allow paragraph to grow, pushing placeholder down */
+}
+
+/* Image Placeholders within Leverage AI cards */
+.leverage-ai-section > div div[class*="placeholder"] {
+  width: 100%;
+  min-height: 180px; /* Slightly smaller placeholders for these cards */
+  background-color: #e9ecef;
+  border: 2px dashed #ced4da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: #6c757d;
+  border-radius: 4px;
+  margin-top: auto; /* Pushes placeholder to bottom if text is short */
+}
+
+/* How It Works Section (.how-it-works-section) Styling */
+.how-it-works-section {
+  padding: 4em 2em;
+  background-color: #ffffff; /* White background, alternating with previous */
+}
+
+.how-it-works-section > h2 { /* Main headline */
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #212529;
+  text-align: center;
+  margin-bottom: 2.5em; /* More space before the steps */
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute space between items */
+  gap: 2em; /* Gap between step items */
+}
+
+.steps-container > div { /* Each individual step item */
+  flex-basis: calc(25% - 1.5em); /* Aim for 4 columns, accounting for 2em gap (adjust divisor of gap) */
+  min-width: 280px; /* Minimum width before stacking or becoming too narrow */
+  background-color: #f8f9fa; /* Light background for each step item */
+  padding: 2em 1.5em;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 6px rgba(0,0,0,0.05); */ /* Optional subtle shadow */
+  text-align: left; /* Or center if preferred for steps */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em; /* For stacking */
+}
+
+.steps-container > div h3 { /* Step Number */
+  font-size: 2em; /* Large step number */
+  font-weight: 700;
+  color: #007bff; /* Primary blue color for step number */
+  margin-bottom: 0.5em;
+  line-height: 1; /* Keep line height tight for the number */
+}
+
+.steps-container > div p:first-of-type { /* Step Title (the p immediately after h3) */
+  font-size: 1.2em;
+  font-weight: 600; /* Bold title */
+  color: #343a40;
+  margin-bottom: 0.75em;
+}
+
+.steps-container > div p:last-of-type { /* Step Description */
+  font-size: 0.95em;
+  color: #495057;
+  line-height: 1.6;
+  flex-grow: 1; /* Allow description to take space */
+}
+
 
 /* General Section Styling */
 section {
@@ -93,7 +559,7 @@ section:last-of-type {
 }
 
 /* Button Styling */
-.hero-section a, /* Targeting hero buttons specifically for now */
+/* .hero-section a, /* Targeting hero buttons specifically for now - MOVED to hero-section specific styling */
 .cta-section a,
 .docs-section a[href="#"] /* Example for docs button if it's an anchor */ {
   display: inline-block;
